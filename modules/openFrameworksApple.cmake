@@ -9,8 +9,6 @@ list(APPEND OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitMovieRenderer.m
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitPlayer.mm
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQtUtils.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimeGrabber.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimePlayer.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofRtAudioSoundStream.cpp
         )
 
@@ -96,7 +94,6 @@ find_library(coreaudio_lib CoreAudio)
 find_library(corefoundation_lib CoreFoundation)
 find_library(coreservices_lib CoreServices)
 find_library(opengl_lib OpenGL)
-find_library(quicktime_lib QuickTime)
 find_library(corevideo_lib CoreVideo)
 find_library(qtkit_lib QTKit)
 find_library(cocoa_lib Cocoa)
@@ -115,7 +112,6 @@ set(OF_CORE_FRAMEWORKS
         ${corefoundation_lib}
         ${coreservices_lib}
         ${opengl_lib}
-        ${quicktime_lib}
         ${corevideo_lib}
         ${qtkit_lib}
         ${cocoa_lib}
