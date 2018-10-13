@@ -1,10 +1,10 @@
 
-list( APPEND OF_SOURCE_FILES
+list(APPEND OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofDirectShowGrabber.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofDirectShowPlayer.cpp
         )
 
-include_directories( "${OF_DIRECTORY_ABSOLUTE}/src/videoinput" )
+include_directories("${OF_DIRECTORY_ABSOLUTE}/src/videoinput")
 
 #--------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------
@@ -19,13 +19,13 @@ set(VIDEOINPUT_SOURCES
         )
 
 
-if(OF_STATIC)
+if (OF_STATIC)
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${OF_ROOT_DIR}/lib-windows/release-${OF_PLATFORM}-${ARCH_BIT}")
-    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG   "${OF_ROOT_DIR}/lib-windows/debug-${OF_PLATFORM}-${ARCH_BIT}")
-else()
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${OF_ROOT_DIR}/lib-windows/debug-${OF_PLATFORM}-${ARCH_BIT}")
+else ()
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${OF_ROOT_DIR}/lib-windows/release-${OF_PLATFORM}-${ARCH_BIT}")
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG   "${OF_ROOT_DIR}/lib-windows/debug-${OF_PLATFORM}-${ARCH_BIT}")
-endif()
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${OF_ROOT_DIR}/lib-windows/debug-${OF_PLATFORM}-${ARCH_BIT}")
+endif ()
 
 set(OPENFRAMEWORKS_DEFINITIONS
         -D_WIN32_WINNT=0x0501
@@ -55,28 +55,27 @@ list(APPEND OPENFRAMEWORKS_INCLUDE_DIRS
         ${FONTCONFIG_INCLUDE_DIRS}
         )
 
-if(CMAKE_SYSTEM MATCHES Windows)
+if (CMAKE_SYSTEM MATCHES Windows)
     add_dependencies(
             openFrameworks
             videoinput
     )
-endif()
+endif ()
 
-if(CMAKE_SYSTEM MATCHES Windows)
+if (CMAKE_SYSTEM MATCHES Windows)
     target_link_libraries(
             videoinput
             ${STRMIIDS_LIB}
     )
-endif()
+endif ()
 
-if(CMAKE_SYSTEM MATCHES Windows)
+if (CMAKE_SYSTEM MATCHES Windows)
     list(APPEND OPENFRAMEWORKS_LIBRARIES
             videoinput
             )
-endif()
+endif ()
 
 # --- Shared
-
 
 
 #--------------------------------------------------------------------------------------------
@@ -90,16 +89,16 @@ set(OPENFRAMEWORKS_DEFINITIONS
         -DOF_VIDEO_PLAYER_DIRECTSHOW
         )
 
-if(CMAKE_BUILD_TYPE MATCHES Release)
+if (CMAKE_BUILD_TYPE MATCHES Release)
     set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-windows/release-${OF_PLATFORM}-${ARCH_BIT}")
-elseif(CMAKE_BUILD_TYPE MATCHES Debug)
+elseif (CMAKE_BUILD_TYPE MATCHES Debug)
     set(OF_LIB_DIR "${OF_ROOT_DIR}/lib-windows/debug-${OF_PLATFORM}-${ARCH_BIT}")
-endif()
+endif ()
 
 
-if(NOT OF_CONSOLE)
+if (NOT OF_CONSOLE)
     list(APPEND OPENFRAMEWORKS_LIBRARIES -mwindows)
-endif()
+endif ()
 
 
 list(APPEND OPENFRAMEWORKS_DEFINITIONS
@@ -108,7 +107,7 @@ list(APPEND OPENFRAMEWORKS_DEFINITIONS
         -D_WIN32_WINNT=0x0501
         -D_UNICODE
         -DUNICODE
-    )
+        )
 
 list(APPEND OFXSOURCES
         "${OFXADDON_DIR}/libs/oscpack/src/ip/win32/NetworkingUtils.cpp"

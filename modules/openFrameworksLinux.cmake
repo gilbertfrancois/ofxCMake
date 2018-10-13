@@ -1,6 +1,6 @@
 # ============================================================================
 # ---------------------------- Source Files ----------------------------------
-list( APPEND OF_SOURCE_FILES
+list(APPEND OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstUtils.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstVideoGrabber.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstVideoPlayer.cpp
@@ -10,15 +10,15 @@ list( APPEND OF_SOURCE_FILES
 # --------------------------- Include Folders --------------------------------
 
 # ------------------ Putting the includes into one list ----------------------
-list( APPEND OF_CORE_HEADERS ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/include)
+list(APPEND OF_CORE_HEADERS ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/include)
 
 # ============================================================================
 # ------------------------------ Libraries -----------------------------------
 
 # ---- shared
-set( LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so )
+set(LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so)
 
-set( OF_CORE_LIBS
+set(OF_CORE_LIBS
         ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/lib/linux64/libglfw3.a
         ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/lib/linux64/libkiss.a
         ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoCrypto.a
@@ -34,24 +34,24 @@ set( OF_CORE_LIBS
 # ============================================================================
 # ----------------------------- System Frameworks ----------------------------
 set(CMAKE_MODULE_PATH
-  "${CMAKE_MODULE_PATH}"
-  "${CMAKE_CURRENT_LIST_DIR}")
+        "${CMAKE_MODULE_PATH}"
+        "${CMAKE_CURRENT_LIST_DIR}")
 
 find_package(PkgConfig REQUIRED)
 find_package(GStreamer REQUIRED)
 
-PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
-PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
+PKG_SEARCH_MODULE(ALSA "REQUIRED" alsa)
+PKG_SEARCH_MODULE(CAIRO "REQUIRED" cairo)
 
-include_directories( ${CAIRO_INCLUDE_DIRS} )
-include_directories( ${OPENAL_INCLUDE_DIRS} )
-include_directories( ${ALSA_INCLUDE_DIRS} )
-include_directories( ${GSTREAMER_APP_INCLUDE_DIRS} )
-include_directories( ${GSTREAMER_BASE_INCLUDE_DIRS} )
-include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
+include_directories(${CAIRO_INCLUDE_DIRS})
+include_directories(${OPENAL_INCLUDE_DIRS})
+include_directories(${ALSA_INCLUDE_DIRS})
+include_directories(${GSTREAMER_APP_INCLUDE_DIRS})
+include_directories(${GSTREAMER_BASE_INCLUDE_DIRS})
+include_directories(${GSTREAMER_VIDEO_INCLUDE_DIRS})
 
 
-set( OF_CORE_FRAMEWORKS
+set(OF_CORE_FRAMEWORKS
         z
         gstapp-1.0
         gstvideo-1.0

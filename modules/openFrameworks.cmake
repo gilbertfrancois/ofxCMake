@@ -90,10 +90,9 @@ set(HEADER_GLFW ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/include)
 set(HEADER_UTF8 ${OF_DIRECTORY_ABSOLUTE}/libs/utf8cpp/include)
 
 
-
 # ============================================================================
 # ------------------ Putting the includes into one list ----------------------
-set( OF_CORE_HEADERS
+set(OF_CORE_HEADERS
         ${HEADER_OF_0} ${HEADER_OF_1} ${HEADER_OF_2} ${HEADER_OF_3} ${HEADER_OF_4} ${HEADER_OF_5}
         ${HEADER_OF_6} ${HEADER_OF_7} ${HEADER_OF_8} ${HEADER_OF_9} ${HEADER_OF_10} ${HEADER_OF_11}
         ${HEADER_POCO}

@@ -4,27 +4,27 @@
 # ========================================================
 # ===================== CMake Settings ===================
 # ========================================================
-cmake_minimum_required( VERSION 3.3 )
-project( openframeworks )
+cmake_minimum_required(VERSION 3.3)
+project(openframeworks)
 
 # ========================================================
 # ===================== User Settings ====================
 # ========================================================
 # ---------------------- App name  -----------------------
-set( APP_NAME   ofApp )
+set(APP_NAME ofApp)
 
 # ------------------------ OF Path -----------------------
 # --- If outside the OF structure, set an absolute OF path
-set( OF_DIRECTORY_BY_USER "../../.." )
+set(OF_DIRECTORY_BY_USER "../../..")
 
 # --------------------- Source Files ---------------------
-set( ${APP_NAME}_SOURCE_FILES
+set(${APP_NAME}_SOURCE_FILES
         src/main.cpp
-        src/ofApp.cpp )
+        src/ofApp.cpp)
 
 
 # ------------------------ AddOns  -----------------------
-set( OFX_ADDONS_ACTIVE
+set(OFX_ADDONS_ACTIVE
         #        ofxXmlSettings
         #        ofxOsc
         #        ofxGui
@@ -36,11 +36,11 @@ set( OFX_ADDONS_ACTIVE
         #        ofxOpenCv
         #        ofxSvg
         #        ofxEmscripten (untested)
-                )
+        )
 
 # =========================================================================
 # ============================== OpenFrameworks ===========================
 # =========================================================================
-include( ${OF_DIRECTORY_BY_USER}/addons/ofxCMake/modules/main.cmake )
+include(${OF_DIRECTORY_BY_USER}/addons/ofxCMake/modules/main.cmake)
 # =========================================================================
 
